@@ -1,0 +1,31 @@
+.BottomToolbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    height: 56px;
+    width: 100vw;
+    bottom: 0;
+    background-color: #fff;
+}
+.BottomToolbar > div {
+    font-size: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    height: 100%;
+    opacity: .5;
+}
+.BottomToolbar > div.active{
+    opacity: 1;
+}
+.BottomToolbar > div > label {
+    font-size: .75rem;
+    /* transition: font-size linear .2s; --- evaluar */
+}
+.BottomToolbar > div.active > label {
+    /* font-size: .85rem; --- evaluar */
+}
