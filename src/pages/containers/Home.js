@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import 'onsenui/css/onsenui.css'
 import 'onsenui/css/onsen-css-components.css'
@@ -13,7 +14,8 @@ import Page3 from './Page3'
 
 import {
     Page,
-    Toolbar
+    Toolbar,
+    ToolbarButton
 } from 'react-onsenui'
 
 class HomeC extends Component {
@@ -22,7 +24,7 @@ class HomeC extends Component {
     }
     buttonSelect = i => {
         this.currentPageContent( i )
-        this.setState({currentPage:i})
+        this.setState({ currentPage: i })
     }
     currentPageContent = i => {
         switch( i ) {
@@ -43,15 +45,27 @@ class HomeC extends Component {
         <Page 
             renderToolbar = {()=>(
                 <Toolbar modifier='noshadow'>
+                    <div className = "left">
+                        <ToolbarButton
+                            onClick = { this.props.setCurrentContext.bind( this, 'Login' ) }
+                            icon = 'md-account'
+                        />
+                    </div>
                     <div className = "center">App</div>
+                    <div className = "right">
+                        <ToolbarButton
+                            onClick = { this.props.setCurrentContext.bind( this, 'Settings' ) }
+                            icon = 'md-settings'
+                        />
+                    </div>
                 </Toolbar>
             )}
         >
             <BottomToolbar
                 active = { 0 }
                 className = "BottomToolbar"
-                activeColor = 'blue'
-                rippleColor = 'rgba(255,0,0,.05)'
+                activeColor = '#1e88e5'
+                rippleColor = 'rgba(0,0,0,.025)'
                 buttonOnSelect = { this.buttonSelect }
                 renderButtons = {() => [
                     {
@@ -87,4 +101,8 @@ class HomeC extends Component {
     }
 }
 
-export default HomeC
+function mapStateToProps( state ){
+    return state
+}
+
+export default connect( mapStateToProps )( HomeC )

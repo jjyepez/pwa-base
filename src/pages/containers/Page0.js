@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import 'onsenui/css/onsenui.css'
 import 'onsenui/css/onsen-css-components.css'
@@ -24,6 +25,14 @@ class PageC extends Component {
             data: data.rs,
             loading: false
         })
+        this.props.dispatch({ // las props traen el dispatch al importar connect!
+            type: 'SET_RECORDS_FROM_API',
+            payload: {
+               data: {
+                   records: data.rs
+               }
+            }
+        })
     }
     componentDidMount = () => {
         //this.setState({ n: ~~( Math.random()*100 ) })
@@ -34,16 +43,25 @@ class PageC extends Component {
                 <ProgressCircular indeterminate />
             ) : (
                 <div>
-                    { this.state.data.map( ( el,i ) => {
+                    { this.state.data.map( ( el, i ) => {
                         return (
-                            <Card key = {i}>
-                                { this.state.patronData.map( field => {
-                                    return (
-                                        <div>
-                                            { el[ field ] }
-                                        </div>
-                                    )
-                                }) }
+                            <Card key = {i} style={{ display: 'flex' }}>
+                                <img
+                                    alt = "avatar"
+                                    style={{
+                                        marginRight: '1.5rem',
+                                        width: '3rem',
+                                        height: '3rem',
+                                        borderRadius: '100%'
+                                    }}
+                                    float="right"
+                                    src={el.avatar}
+                                />
+                                <div>
+                                    <small>{ el.nombre }<br/></small>
+                                    <small>{ el.apellido }<br/></small>
+                                    <small>{ el.email }<br/></small>
+                                </div>
                             </Card>
                         )
                     })}
@@ -53,4 +71,8 @@ class PageC extends Component {
     }
 }
 
-export default PageC
+function mapStateToProps( state ){
+    return state
+}
+
+export default connect( mapStateToProps )( PageC )
