@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 
+import jstiles from '../../includes/jstiles'
+
 class PageC extends Component {
+    componentDidMount = () => {
+        jstiles.generarRandomTiles( '.contenedor', 20 )
+        jstiles.inicializarTiles( '.contenedor' )
+    }
     render(){
         return (
-            <div>1</div>
+            <div className = "contenedor" />
         )
     }
 }

@@ -47,7 +47,7 @@ class HomeC extends Component {
                 <Toolbar modifier='noshadow'>
                     <div
                         style = {{
-                            minWidth: '56px'
+                            width: '56px'
                         }}
                         className = "left"
                     >
@@ -58,7 +58,8 @@ class HomeC extends Component {
                     </div>
                     <div
                         style = {{
-                            lineHeight: '50px'
+                            lineHeight: '50px',
+                            width: '100%'
                         }}
                         className = "center"
                     >
@@ -77,7 +78,7 @@ class HomeC extends Component {
                     </div>
                     <div
                         style = {{
-                            minWidth: '56px'
+                            width: '56px'
                         }}
                         className = "right"
                     >

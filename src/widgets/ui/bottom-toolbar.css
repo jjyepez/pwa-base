@@ -9,6 +9,7 @@
     bottom: 0;
     background-color: rgba(255,255,255,.95);
     border-top: 1px solid rgba(0,0,0,.05);
+    z-index: 9999;
 }
 .BottomToolbar > div {
     font-size: 1.25rem;

@@ -10,7 +10,7 @@ import Settings from './pages/containers/Settings'
 
 class App extends Component {
   state = {
-    currentContext: 'Login'
+    currentContext: 'Home'
   }
   componentDidMount = () => {
     store.subscribe( this.handleChange )
