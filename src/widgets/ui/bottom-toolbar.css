@@ -7,7 +7,8 @@
     height: 56px;
     width: 100vw;
     bottom: 0;
-    background-color: #fff;
+    background-color: rgba(255,255,255,.95);
+    border-top: 1px solid rgba(0,0,0,.05);
 }
 .BottomToolbar > div {
     font-size: 1.25rem;

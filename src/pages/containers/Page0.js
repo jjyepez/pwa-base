@@ -34,18 +34,29 @@ class PageC extends Component {
             }
         })
     }
-    componentDidMount = () => {
-        //this.setState({ n: ~~( Math.random()*100 ) })
-    }
     render(){
         return (
-            this.state.loading ? (
-                <ProgressCircular indeterminate />
-            ) : (
-                <div>
-                    { this.state.data.map( ( el, i ) => {
+            <div 
+                style = {{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    minHeight: '30vh'
+                }}
+            >
+                { this.state.loading ? (
+                    <ProgressCircular indeterminate />
+                ) : (
+                    this.state.data.map( ( el, i ) => {
                         return (
-                            <Card key = {i} style={{ display: 'flex' }}>
+                            <Card
+                                key = {i}
+                                style={{
+                                    width: '100%',
+                                    display: 'flex'
+                                }}
+                            >
                                 <img
                                     alt = "avatar"
                                     style={{
@@ -54,19 +65,19 @@ class PageC extends Component {
                                         height: '3rem',
                                         borderRadius: '100%'
                                     }}
-                                    float="right"
-                                    src={el.avatar}
+                                    float = "right"
+                                    src = { el.avatar }
                                 />
                                 <div>
-                                    <small>{ el.nombre }<br/></small>
+                                    <b>{ el.nombre }<br/></b>
                                     <small>{ el.apellido }<br/></small>
                                     <small>{ el.email }<br/></small>
                                 </div>
                             </Card>
                         )
-                    })}
-                </div>
-            )
+                    })
+                )}
+            </div>
         )
     }
 }

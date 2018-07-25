@@ -35,7 +35,6 @@ class BottomToolbarC extends Component {
                         onClick = { () => {
                             this.selectButton( i )
                             this.props.buttonOnSelect( i )
-console.log(2)
                         }}
                     >
                         <Ripple color = { rippleColor } />

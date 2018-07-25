@@ -1,7 +1,7 @@
 # PWA base con ReactJS + Redux + OnsenUI
 Estudio de estructura y codificación de una Progressive Web App con ReactJS
 
-Implementa:
+## Implementa:
 - ReactJS
 - Redux
 - OnsenUI

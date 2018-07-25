@@ -45,14 +45,42 @@ class HomeC extends Component {
         <Page 
             renderToolbar = {()=>(
                 <Toolbar modifier='noshadow'>
-                    <div className = "left">
+                    <div
+                        style = {{
+                            minWidth: '56px'
+                        }}
+                        className = "left"
+                    >
                         <ToolbarButton
                             onClick = { this.props.setCurrentContext.bind( this, 'Login' ) }
                             icon = 'md-account'
                         />
                     </div>
-                    <div className = "center">App</div>
-                    <div className = "right">
+                    <div
+                        style = {{
+                            lineHeight: '50px'
+                        }}
+                        className = "center"
+                    >
+                        <input 
+                            style = {{
+                                border: 0,
+                                outline: 'none',
+                                borderRadius: '1rem',
+                                backgroundColor: '#eceff1',
+                                padding: '10px 15px',
+                                width: '100%'
+                            }}
+                            placeholder="Buscar"
+                            type="search"
+                        />
+                    </div>
+                    <div
+                        style = {{
+                            minWidth: '56px'
+                        }}
+                        className = "right"
+                    >
                         <ToolbarButton
                             onClick = { this.props.setCurrentContext.bind( this, 'Settings' ) }
                             icon = 'md-settings'
@@ -75,10 +103,6 @@ class HomeC extends Component {
                     {
                         icon : 'md-fire',
                         label: 'Inicio',
-                    },
-                    {
-                        icon : 'md-android',
-                        label: 'Android',
                     },
                     {
                         icon : 'md-favorite',
